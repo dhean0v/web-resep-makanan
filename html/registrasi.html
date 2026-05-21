@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Pawonku</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body style="background:#FAF3E8;">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:#7c3a1e;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html" style="color:#e8a96a; font-size:1.7rem; font-family:'DM Serif Display',serif;">
+            PawonKu</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link text-white-50" href="index.html">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link text-white-50" href="resep.html">Resep</a></li>
+                <li class="nav-item"><a class="nav-link text-white-50" href="author.html">Author</a></li>
+            </ul>
+
+            <div class="d-flex gap-2 mt-3 mt-lg-0">
+                <input type="search"
+                class="form-control form-control-sm rounded-pill border-0"
+                placeholder="Cari resep..."
+                style="width:200px;background:rgba(255,255,255,.15);color:white;">
+
+                <a href="login.html"
+                class="btn btn-sm text-white rounded-pill px-4"
+                style="background:#C8622A;">
+                Login
+                </a>
+            </div>
+        </div>
+    </div>
+    </nav>
+
+    <!-- container -->
+    <div class="container py-5">
+        <div class="card border-0 shadow rounded-4 overflow-hidden">
+            <div class="row g-0" style="height:560px;">
+
+            <!-- KIRI GAMBAR -->
+                <div class="col-md-6 position-relative" style="height:560px; overflow:hidden;">
+                    <img src="https://images.unsplash.com/photo-1716816211590-c15a328a5ff0?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YnVtYnV8ZW58MHx8MHx8fDA%3D"
+                        class="w-100 h-100"
+                        style="object-fit:cover;">
+
+                    <!-- QUOTES -->
+                    <div class="position-absolute bottom-0 start-0 w-100 p-4">
+                    <h1 class="text-white fw-bold mb-1 text-shadow" style="font-family:'Lora',serif;">
+                        Inspirasi Masakan<br> Rumah di Ujung Hari
+                    </h1>
+                    <p class="text-white my-4" style="font-family:'Lora',serif;">
+                        Masak lebih menyenangkan dengan resep<br>
+                        terkurasi untuk keluarga tercinta. Temukan ribuan<br>
+                        cara menyajikan cinta di atas meja makan.
+                    </p>
+                    </div>
+                </div>
+
+            <!-- KANAN FORM -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center p-4">
+                <div class="w-100 px-4">
+
+                <h3 class="fw-bold text-center mb-4">Register</h3>
+
+                <div class="mb-2">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control rounded-3">
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control rounded-3">
+                </div>
+
+                <div class="mb-2">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control rounded-3">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Konfirmasi Password</label>
+                    <input type="password" class="form-control rounded-3">
+                </div>
+
+                <button class="btn w-100 text-white rounded-3 mb-2"
+                        style="background:#B5521E;">
+                    Daftar
+                </button>
+
+                <p class="text-center text-secondary mb-0">
+                    Sudah punya akun?
+                    <a href="login.html" class="fw-bold" style="color:#C8622A;">
+                    Login
+                    </a>
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="mt-5 py-5 text-white" style="background:#3D2B1F;">
+    <div class="container">
+        <div class="row">
+
+            <!-- Brand -->
+            <div class="col-md-4 mb-3">
+                <h5 class="fw-bold">Pawonku</h5>
+                <p class="text-white-50">
+                Temukan berbagai resep masakan rumahan, tradisional, dan modern dalam satu tempat.
+                </p>
+            </div>
+
+            <!-- Menu -->
+            <div class="col-md-4 mb-3">
+                <h6 class="fw-bold">Menu</h6>
+                <ul class="list-unstyled text-white-50">
+                <li>Beranda</li>
+                <li>Resep</li>
+                <li>Author</li>
+                </ul>
+            </div>
+
+            <!-- Kontak -->
+            <div class="col-md-4 mb-3">
+                <h6 class="fw-bold">Kontak</h6>
+                <p class="text-white-50 mb-1">Email: pawonku@email.com</p>
+                <p class="text-white-50">IG: @pawonku</p>
+            </div>
+        </div>
+
+        <hr class="text-white-50">
+        <div class="text-center text-white-50">
+        © 2026 Pawonku. All rights reserved.
+        </div>
+    </div>
+    </footer>
+</body>
+</html>

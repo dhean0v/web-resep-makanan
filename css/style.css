@@ -1,0 +1,39 @@
+body{
+    background-color: red;
+}
+/* Navbar */
+navbar-custom{
+    background-color: #EEC797 !important;
+}
+
+/* Logo */
+navbar-brand{
+    color: #7A4827 !important;
+}
+
+/* Menu */
+.nav-link{
+    color: #6A4A35 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    color: #C46A2D !important;
+}
+
+/* Search */
+.form-control{
+    width: 220px;
+}
+
+/* Tombol Login */
+.btn-login{
+    background-color: #C46A2D;
+    color: white;
+}
+
+.btn-login:hover{
+    background-color: #A75422;
+    color: white;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jelajahi Resep</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"rel="stylesheet">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body style="background:#FAF3E8;">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:#7c3a1e;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html" style="color:#e8a96a; font-size:1.7rem; font-family:'DM Serif Display',serif;">
+            PawonKu</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link text-white-50" href="index.html">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="resep.html">Resep</a></li>
+                <li class="nav-item"><a class="nav-link text-white-50" href="author.html">Author</a></li>
+            </ul>
+
+            <div class="d-flex gap-2 mt-3 mt-lg-0">
+                <input type="search"
+                class="form-control form-control-sm rounded-pill border-0"
+                placeholder="Cari resep..."
+                style="width:200px;background:rgba(255,255,255,.15);color:white;">
+
+                <a href="login.html"
+                class="btn btn-sm text-white rounded-pill px-4"
+                style="background:#C8622A;">
+                Login
+                </a>    
+            </div>
+        </div>
+    </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="container mt-5">
+        <div class="text-center">
+            <h2 style="font-family:'Libre Baskerville';">
+                Jelajahi Resep Nusantara
+            </h2>
+            <p class="text-secondary">
+                Temukan resep terbaik dari berbagai daerah
+            </p>
+        </div>
+
+        <!-- GRID -->
+        <div class="row g-4">
+            <!-- CARD 1 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://www.dapurkobe.co.id/wp-content/uploads/nasi-goreng-hijau.jpg"
+                        class="card-img-top"
+                        style="height:220px; object-fit:cover;">
+                    <div class="card-body">
+                        <h6>Nasi Goreng Spesial</h6>
+                        <small class="text-secondary">Pak Budi</small>
+                        <a href="detail_nasgor.html" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://akurat.sgp1.cdn.digitaloceanspaces.com/images/jogja/2025/07/20/mie-nyemek-1532870124.jpg"
+                        class="card-img-top"
+                        style="height:220px; object-fit:cover;">
+                    <div class="card-body">
+                        <h6> Mie Nyemek Jogja</h6>
+                        <small class="text-secondary">Sari</small>
+                        <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://www.dapurkobe.co.id/wp-content/uploads/soto-lamongan.jpg"
+                        class="card-img-top"
+                        style="height:220px; object-fit:cover;">
+                    <div class="card-body">
+                        <h6> Soto Ayam Lamongan</h6>
+                        <small class="text-secondary">Chef Danu</small>
+                        <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://lingkar.news/wp-content/uploads/2023/03/Resep-coto-makassar-kuah-kental-Makanan-Tradisional-Indonesia.jpg"
+                        class="card-img-top"
+                        style="height:220px; object-fit:cover;">
+                    <div class="card-body">
+                        <h6> Coto Makassar</h6>
+                        <small class="text-secondary">Chef Willi</small>
+                        <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://cdn-jpr.jawapos.com/images/14/2025/07/24/rujak-3942222085.jpg"
+                        class="card-img-top"
+                        style="height:220px; object-fit:cover;">
+                    <div class="card-body">
+                        <h6> Rujak Petis</h6>
+                        <small class="text-secondary">Bu Shinta</small>
+                        <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="https://o-cdf.oramiland.com/unsafe/cnc-magazine.oramiland.com/parenting/original_images/terlariss_es_pisang_ijo_asli_makassar.jpg"
+                        class="card-img-top"
+                        style="height:220px; object-fit:cover;">
+                    <div class="card-body">
+                        <h6> Es Pisang Ijo</h6>
+                        <small class="text-secondary">Cika</small>
+                        <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PAGINATION -->
+        <div class="text-center mt-5">
+            <button class="btn btn-sm text-white" style="background:#B5521E;">1</button>
+            <button class="btn btn-sm">2</button>
+            <button class="btn btn-sm">3</button>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="mt-5 py-5 text-white" style="background:#3D2B1F;">
+    <div class="container">
+        <div class="row">
+
+            <!-- Brand -->
+            <div class="col-md-4 mb-3">
+                <h5 class="fw-bold">Pawonku</h5>
+                <p class="text-white-50">
+                Temukan berbagai resep masakan rumahan, tradisional, dan modern dalam satu tempat.
+                </p>
+            </div>
+
+            <!-- Menu -->
+            <div class="col-md-4 mb-3">
+                <h6 class="fw-bold">Menu</h6>
+                <ul class="list-unstyled text-white-50">
+                <li>Beranda</li>
+                <li>Resep</li>
+                <li>Author</li>
+                </ul>
+            </div>
+
+            <!-- Kontak -->
+            <div class="col-md-4 mb-3">
+                <h6 class="fw-bold">Kontak</h6>
+                <p class="text-white-50 mb-1">Email: pawonku@email.com</p>
+                <p class="text-white-50">IG: @pawonku</p>
+            </div>
+        </div>
+
+        <hr class="text-white-50">
+        <div class="text-center text-white-50">
+        © 2026 Pawonku. All rights reserved.
+        </div>
+    </div>
+    </footer>
+</body>
+</html>
