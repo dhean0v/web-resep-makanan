@@ -1,132 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Edit Resep</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
-<body style="background:#FAF3E8; font-family:'Poppins',sans-serif;">
+<body style="background:#FAF3E8; font-family:'Lato',sans-serif;">
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:#7c3a1e;">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html" style="color:#e8a96a; font-size:1.7rem; font-family:'DM Serif Display',serif;">
-            PawonKu</a>
+        <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html" style="color:#e8a96a; font-size:1.7rem; font-family:'DM Serif Display',serif;">PawonKu</a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="nav">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a class="nav-link text-white-50" href="index.html">Beranda</a></li>
-                <li class="nav-item"><a class="nav-link text-white-50" href="resep.html">Resep</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="author.html">Author</a></li>
+            <li class="nav-item"><a class="nav-link text-white-50" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link text-white-50" href="resep.html">Resep</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="author.html">Author</a></li>
             </ul>
-
             <div class="d-flex gap-2 mt-3 mt-lg-0">
-                <input type="search"
-                class="form-control form-control-sm rounded-pill border-0"
-                placeholder="Cari resep..."
-                style="width:200px;background:rgba(255,255,255,.15);color:white;">
-
+            <input type="search" class="form-control form-control-sm rounded-pill border-0"
+                placeholder="Cari resep..." style="width:200px;background:rgba(255,255,255,.15);color:white;">
             </div>
         </div>
         </div>
-    </nav>    
+    </nav>
 
     <div class="container py-5">
+
         <!-- judul -->
-        <h2 class="mb-3" style="font-family:'DM Serif Display';">
-            Edit Resep
-        </h2>
-        <p class="text-secondary mb-5">
-            Perbarui resep agar tampil lebih menarik dan mudah diikuti.
-        </p>
+        <div class="mb-4">
+        <h2 style="font-family:'Playfair Display';">Edit Resep</h2>
+        <p class="text-secondary">Perbarui resep agar tampil lebih menarik dan mudah diikuti.</p>
+        </div>
 
-        <!-- form -->
-        <div class="card border-0 rounded-4 shadow-sm overflow-hidden mx-auto" style="max-width:900px; background:#F0E0C4;">
-            <div class="card-body p-5">
-                <!-- foto -->
-                <label class="form-label fw-semibold">Foto Resep</label>
-                <input type="file" class="form-control rounded-3 mb-4">
+        <div class="card border-0 rounded-4 shadow-sm mx-auto" style="max-width:860px; background:#F0E0C4;">
+        <div class="card-body p-4 p-md-5">
 
-                <!-- nama -->
+            <!-- foto lama + ganti foto -->
+            <div class="mb-4">
+            <label class="form-label fw-semibold">Foto Resep</label>
+            <!-- foto lama -->
+            <div class="mb-2">
+                <img src="https://www.dapurkobe.co.id/wp-content/uploads/rendang-daging.jpg"
+                    id="fotoLama"
+                    class="rounded-3"
+                    style="height:140px; object-fit:cover; width:100%;">
+                <div class="form-text">Foto saat ini. Upload baru untuk mengganti.</div>
+            </div>
+            <input type="file" class="form-control rounded-3" id="inputFoto"
+                    name="foto" accept="image/*">
+            <div id="previewFoto" class="mt-2"></div>
+            </div>
+
+            <div class="row g-3 mb-4">
+            <div class="col-md-8">
                 <label class="form-label fw-semibold">Nama Resep</label>
-                <input type="text" class="form-control rounded-3 mb-4" value="Rendang Daging Sapi">
 
-                <!-- bahan -->
-                <label class="form-label fw-semibold">Bahan</label>
-                <textarea rows="5" class="form-control rounded-3 mb-4" placeholder="Tuliskan bahan resep">
-    500 gr daging sapi
+                <input type="text" class="form-control rounded-3" name="judul"
+                    value="Rendang Daging Sapi">
+            </div>
+            <div class="col-md-4">
+                <!-- dropdown kategori -->
+                <label class="form-label fw-semibold">Kategori</label>
+                <select class="form-select rounded-3" name="kategori">
+                <option value="">-- Pilih --</option>
+                <option value="makanan" selected>Makanan</option>
+                <option value="minuman">Minuman</option>
+                <option value="dessert">Dessert</option>
+                </select>
+            </div>
+            </div>
+
+            <!-- bahan -->
+            <div class="mb-4">
+            <label class="form-label fw-semibold">Bahan-bahan</label>
+            <textarea rows="5" class="form-control rounded-3" name="bahan">500 gr daging sapi
     800 ml santan
     5 siung bawang merah
     3 siung bawang putih
-    Serai dan daun jeruk
-                </textarea>
-
-                <!-- langkah -->
-                <label class="form-label fw-semibold">Langkah Memasak</label>
-                <textarea rows="5" class="form-control rounded-3" placeholder="Tuliskan langkah memasak">
-    Haluskan dan tumis bumbu
-    Masukkan daging
-    Tambahkan santan
-    Masak hingga matang
-                </textarea>
-
-                <!-- button -->
-                <div class="d-flex justify-content-end gap-2 mt-5">
-                    <a href="author.html" class="btn rounded-pill px-4" style="background:#E4D3BD; color:#6D4B34;">
-                        Batal
-                    </a>
-                    <button class="btn text-white rounded-pill px-4" style="background:#C8622A;">
-                        Simpan
-                    </button>
-                </div>
+    Serai & daun jeruk</textarea>
             </div>
+
+            <!-- langkah -->
+            <div class="mb-4">
+            <label class="form-label fw-semibold">Langkah Memasak</label>
+            <textarea rows="5" class="form-control rounded-3" name="langkah">1. Haluskan dan tumis bumbu
+    2. Masukkan daging lalu aduk
+    3. Tuang santan dan masak perlahan
+    4. Aduk hingga kuah menyusut
+    5. Sajikan rendang hangat</textarea>
+            </div>
+
+            <!-- link YouTube -->
+            <div class="mb-4">
+            <label class="form-label fw-semibold">
+                Link YouTube
+                <span class="text-muted fw-normal">(opsional)</span>
+            </label>
+            <div class="input-group">
+                <span class="input-group-text rounded-start-3" style="background:#fff;">▶</span>
+                <!-- nanti value dari database -->
+                <input type="url" class="form-control rounded-end-3" name="youtube_url"
+                    value="https://www.youtube.com/watch?v=contoh123"
+                    placeholder="https://www.youtube.com/watch?v=...">
+            </div>
+            <div class="form-text">Kosongkan jika tidak ingin mengubah link video</div>
+            </div>
+
+            <!-- tombol -->
+            <div class="d-flex justify-content-end gap-2 mt-2">
+            <a href="author.html" class="btn rounded-pill px-4"
+                style="background:#E4D3BD; color:#6D4B34;">Batal</a>
+            <button type="submit" class="btn rounded-pill px-4 text-white"
+                    style="background:#C8622A;">Simpan Perubahan</button>
+            </div>
+
+        </div>
         </div>
     </div>
 
     <!-- footer -->
     <footer class="mt-5 py-5 text-white" style="background:#3D2B1F;">
-    <div class="container">
+        <div class="container">
         <div class="row">
-
-            <!-- brand -->
             <div class="col-md-4 mb-3">
-                <h5 class="fw-bold">Pawonku</h5>
-                <p class="text-white-50">
-                Temukan berbagai resep masakan rumahan, tradisional, dan modern dalam satu tempat.
-                </p>
+            <h5 class="fw-bold">Pawonku</h5>
+            <p class="text-white-50">Temukan berbagai resep masakan rumahan, tradisional, dan modern dalam satu tempat.</p>
             </div>
-
-            <!-- menu -->
             <div class="col-md-4 mb-3">
-                <h6 class="fw-bold">Menu</h6>
-                <ul class="list-unstyled text-white-50">
-                <li>Beranda</li>
-                <li>Resep</li>
-                <li>Author</li>
-                </ul>
+            <h6 class="fw-bold">Menu</h6>
+            <ul class="list-unstyled text-white-50">
+                <li>Beranda</li><li>Resep</li><li>Author</li>
+            </ul>
             </div>
-
-            <!-- kontak -->
             <div class="col-md-4 mb-3">
-                <h6 class="fw-bold">Kontak</h6>
-                <p class="text-white-50 mb-1">Email: pawonku@email.com</p>
-                <p class="text-white-50">IG: @pawonku</p>
+            <h6 class="fw-bold">Kontak</h6>
+            <p class="text-white-50 mb-1">Email: pawonku@email.com</p>
+            <p class="text-white-50">IG: @pawonku</p>
             </div>
         </div>
-
         <hr class="text-white-50">
-        <div class="text-center text-white-50">
-        © 2026 Pawonku. All rights reserved.
+        <div class="text-center text-white-50">© 2026 Pawonku. All rights reserved.</div>
         </div>
-    </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- preview foto baru -->
+    <script>
+        document.getElementById('inputFoto').addEventListener('change', function () {
+        const file = this.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = e => {
+            // sembunyikan foto lama, tampilkan preview baru
+            document.getElementById('fotoLama').style.display = 'none';
+            document.getElementById('previewFoto').innerHTML =
+            `<img src="${e.target.result}" class="img-fluid rounded-3 mt-1" style="max-height:180px;">`;
+        };
+        reader.readAsDataURL(file);
+        });
+    </script>
+
 </body>
 </html>

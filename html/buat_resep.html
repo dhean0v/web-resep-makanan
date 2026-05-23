@@ -5,120 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tambah Resep</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
-<body style="background:#FAF3E8; font-family:'Poppins',sans-serif;">
+<body style="background:#FAF3E8; font-family:'Lato',sans-serif;">
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:#7c3a1e;">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html" style="color:#e8a96a; font-size:1.7rem; font-family:'DM Serif Display',serif;">
-                PawonKu</a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link text-white-50" href="index.html">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link text-white-50" href="resep.html">Resep</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="author.html">Author</a></li>
-                </ul>
-
-                <div class="d-flex gap-2 mt-3 mt-lg-0">
-                    <input type="search"
-                    class="form-control form-control-sm rounded-pill border-0"
-                    placeholder="Cari resep..."
-                    style="width:200px;background:rgba(255,255,255,.15);color:white;">
-                </div>
+        <a class="navbar-brand fw-bold" href="index.html" style="color:#e8a96a; font-size:1.7rem; font-family:'DM Serif Display',serif;">PawonKu</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link text-white-50" href="index.html">Beranda</a></li>
+            <li class="nav-item"><a class="nav-link text-white-50" href="resep.html">Resep</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="author.html">Author</a></li>
+            </ul>
+            <div class="d-flex gap-2 mt-3 mt-lg-0">
+            <input type="search" class="form-control form-control-sm rounded-pill border-0"
+                placeholder="Cari resep..." style="width:200px;background:rgba(255,255,255,.15);color:white;">
             </div>
+        </div>
         </div>
     </nav>
 
     <div class="container py-5">
+
         <!-- judul -->
-        <h2 class="mb-3" style="font-family:'DM Serif Display';">
-            Tambah Resep
-        </h2>
-        <p class="text-secondary mb-5">
-            Bagikan resep terbaikmu dan inspirasi orang lain.
-        </p>
+        <div class="mb-4">
+        <h2 style="font-family:'Playfair Display';">Tambah Resep</h2>
+        <p class="text-secondary">Bagikan resep terbaikmu dan inspirasi orang lain.</p>
+        </div>
 
-        <!-- form -->
-        <div class="card border-0 rounded-4 shadow-sm overflow-hidden mx-auto" style="max-width:900px; background:#F0E0C4;">
-            <div class="card-body p-5">
-                <!-- foto -->
-                <label class="form-label fw-semibold">Foto Resep</label>
-                <input type="file" class="form-control rounded-3 mb-4">
+        <div class="card border-0 rounded-4 shadow-sm mx-auto" style="max-width:860px; background:#F0E0C4;">
+        <div class="card-body p-4 p-md-5">
 
-                <!-- nama -->
-                <label class="form-label fw-semibold">Nama Resep</label>
-                <input type="text" class="form-control rounded-3 mb-4" placeholder="Contoh: Rendang Daging">
-
-                <!-- bahan -->
-                <label class="form-label fw-semibold">Bahan</label>
-                <textarea rows="5" class="form-control rounded-3 mb-4" placeholder="Contoh:
-500 gr daging">
-                </textarea>
-
-                <!-- langkah -->
-                <label class="form-label fw-semibold">Langkah Memasak</label>
-                <textarea rows="5"
-                          class="form-control rounded-3"
-                          placeholder="Contoh:
-1. Haluskan bumbu">
-                </textarea>
-
-                <!-- button -->
-                <div class="d-flex justify-content-end gap-2 mt-5">
-                    <a href="resep_saya.html" class="btn rounded-pill px-4" style="background:#E4D3BD; color:#6D4B34;"> Batal</a>
-                    <button class="btn text-white rounded-pill px-4" style="background:#C8622A;">
-                        Tambah
-                    </button>
-                </div>
+            <div class="mb-4">
+            <label class="form-label fw-semibold">Foto Resep</label>
+            <input type="file" class="form-control rounded-3" id="inputFoto"
+                    name="foto" accept="image/*">
+            <div id="previewFoto" class="mt-2"></div>
             </div>
+
+            <div class="row g-3 mb-4">
+            <div class="col-md-8">
+                <label class="form-label fw-semibold">Nama Resep</label>
+                <input type="text" class="form-control rounded-3" name="judul"
+                    placeholder="Contoh: Rendang Daging">
+            </div>
+            <div class="col-md-4">
+                <!-- dropdown kategori -->
+                <label class="form-label fw-semibold">Kategori</label>
+                <select class="form-select rounded-3" name="kategori">
+                <option value="">-- Pilih --</option>
+                <option value="makanan">Makanan</option>
+                <option value="minuman">Minuman</option>
+                <option value="dessert">Dessert</option>
+                </select>
+            </div>
+            </div>
+
+            <!-- bahan -->
+            <div class="mb-4">
+            <label class="form-label fw-semibold">Bahan-bahan</label>
+            <textarea rows="5" class="form-control rounded-3" name="bahan"
+                placeholder="Contoh:&#10;500 gr daging&#10;800 ml santan&#10;5 siung bawang merah"></textarea>
+            </div>
+
+            <!-- langkah -->
+            <div class="mb-4">
+            <label class="form-label fw-semibold">Langkah Memasak</label>
+            <textarea rows="5" class="form-control rounded-3" name="langkah"
+                placeholder="Contoh:&#10;1. Haluskan bumbu&#10;2. Tumis bawang&#10;3. Masukkan daging"></textarea>
+            </div>
+
+            <!-- link YouTube -->
+            <div class="mb-4">
+            <label class="form-label fw-semibold">
+                Link YouTube
+                <span class="text-muted fw-normal">(opsional)</span>
+            </label>
+            <div class="input-group">
+                <span class="input-group-text rounded-start-3" style="background:#fff;">
+                ▶
+                </span>
+                <input type="url" class="form-control rounded-end-3" name="youtube_url"
+                    placeholder="https://www.youtube.com/watch?v=...">
+            </div>
+            <div class="form-text">Tempel link video tutorial resepmu di YouTube</div>
+            </div>
+
+            <!-- tombol -->
+            <div class="d-flex justify-content-end gap-2 mt-2">
+            <a href="author.html" class="btn rounded-pill px-4"
+                style="background:#E4D3BD; color:#6D4B34;">Batal</a>
+            <button type="submit" class="btn rounded-pill px-4 text-white"
+                    style="background:#C8622A;">Tambah Resep</button>
+            </div>
+
+        </div>
         </div>
     </div>
 
     <!-- footer -->
     <footer class="mt-5 py-5 text-white" style="background:#3D2B1F;">
-    <div class="container">
+        <div class="container">
         <div class="row">
-
-            <!-- brand -->
             <div class="col-md-4 mb-3">
-                <h5 class="fw-bold">Pawonku</h5>
-                <p class="text-white-50">
-                Temukan berbagai resep masakan rumahan, tradisional, dan modern dalam satu tempat.
-                </p>
+            <h5 class="fw-bold">Pawonku</h5>
+            <p class="text-white-50">Temukan berbagai resep masakan rumahan, tradisional, dan modern dalam satu tempat.</p>
             </div>
-
-            <!-- menu -->
             <div class="col-md-4 mb-3">
-                <h6 class="fw-bold">Menu</h6>
-                <ul class="list-unstyled text-white-50">
-                <li>Beranda</li>
-                <li>Resep</li>
-                <li>Author</li>
-                </ul>
+            <h6 class="fw-bold">Menu</h6>
+            <ul class="list-unstyled text-white-50">
+                <li>Beranda</li><li>Resep</li><li>Author</li>
+            </ul>
             </div>
-
-            <!-- kontak -->
             <div class="col-md-4 mb-3">
-                <h6 class="fw-bold">Kontak</h6>
-                <p class="text-white-50 mb-1">Email: pawonku@email.com</p>
-                <p class="text-white-50">IG: @pawonku</p>
+            <h6 class="fw-bold">Kontak</h6>
+            <p class="text-white-50 mb-1">Email: pawonku@email.com</p>
+            <p class="text-white-50">IG: @pawonku</p>
             </div>
         </div>
-
         <hr class="text-white-50">
-        <div class="text-center text-white-50">
-        © 2026 Pawonku. All rights reserved.
+        <div class="text-center text-white-50">© 2026 Pawonku. All rights reserved.</div>
         </div>
-    </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- preview foto -->
+    <script>
+        document.getElementById('inputFoto').addEventListener('change', function () {
+        const file = this.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = e => {
+            document.getElementById('previewFoto').innerHTML =
+            `<img src="${e.target.result}" class="img-fluid rounded-3 mt-1" style="max-height:180px;">`;
+        };
+        reader.readAsDataURL(file);
+        });
+    </script>
+
 </body>
 </html>
