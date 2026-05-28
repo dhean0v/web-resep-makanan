@@ -24,9 +24,20 @@
             <li class="nav-item"><a class="nav-link text-white-50" href="author.html">Author</a></li>
             </ul>
             <div class="d-flex gap-2 mt-3 mt-lg-0">
-            <input type="search" class="form-control form-control-sm rounded-pill border-0"
-                placeholder="Cari resep..." style="width:200px;background:rgba(255,255,255,.15);color:white;">
-            <a href="login.html" class="btn btn-sm text-white rounded-pill px-4" style="background:#C8622A;">Login</a>
+
+                <input type="search"
+                class="form-control form-control-sm rounded-pill border-0"
+                placeholder="Cari resep..."
+                style="width:200px;background:rgba(255,255,255,.15);color:white;">
+
+
+                <div id="navbarAuth">
+
+                </div>
+
+            </div>
+
+            </div>
             </div>
         </div>
         </div>
@@ -41,109 +52,31 @@
 
         <!-- kategori -->
         <div class="d-flex gap-2 flex-wrap justify-content-center mb-4">
-        <button onclick="filterKategori('semua', this)"
-            class="btn btn-sm rounded-pill px-4 text-white"
-            style="background:#C8622A;">
+        <button
+        onclick="filterKategori('Semua')"
+        class="filter-btn btn btn-sm rounded-pill px-4 text-white"
+        style="background:#a30202;">
             Semua
         </button>
-        <button onclick="filterKategori('makanan', this)"
-            class="btn btn-sm rounded-pill px-4 border"
-            style="color:#C8622A; border-color:#C8622A;">
-            Makanan
+        <button onclick="filterKategori('Daging')"
+            class="filter-btn btn btn-sm rounded-pill px-4 text-white"
+            style="background:#C8622A;">
+            Daging
         </button>
-        <button onclick="filterKategori('minuman', this)"
-            class="btn btn-sm rounded-pill px-4 border"
-            style="color:#1a7a8a; border-color:#1a7a8a;">
-            Minuman
+        <button onclick="filterKategori('Nasi')"
+            class="filter-btn btn btn-sm rounded-pill px-4 text-white"
+            style="background:#1a7a8a;">
+            Nasi
         </button>
-        <button onclick="filterKategori('dessert', this)"
-            class="btn btn-sm rounded-pill px-4 border"
-            style="color:#8a4a9e; border-color:#8a4a9e;">
+        <button onclick="filterKategori('Dessert')"
+            class="filter-btn btn btn-sm rounded-pill px-4 text-white"
+            style="background:#8a4a9e;">
             Dessert
         </button>
         </div>
 
         <!-- grid resep -->
         <div class="row g-4" id="gridResep">
-
-        <div class="col-md-4" data-kategori="makanan">
-            <div class="card border-0 shadow-sm h-100">
-            <img src="https://www.dapurkobe.co.id/wp-content/uploads/nasi-goreng-hijau.jpg"
-                class="card-img-top" style="height:220px; object-fit:cover;">
-            <div class="card-body">
-                <span class="badge rounded-pill text-white mb-2" style="background:#C8622A;">Makanan</span>
-                <h6>Nasi Goreng Spesial</h6>
-                <small class="text-secondary">Pak Budi</small>
-                <a href="detail_resep.html" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
-            </div>
-            </div>
-        </div>
-
-        <div class="col-md-4" data-kategori="makanan">
-            <div class="card border-0 shadow-sm h-100">
-            <img src="https://akurat.sgp1.cdn.digitaloceanspaces.com/images/jogja/2025/07/20/mie-nyemek-1532870124.jpg"
-                class="card-img-top" style="height:220px; object-fit:cover;">
-            <div class="card-body">
-                <span class="badge rounded-pill text-white mb-2" style="background:#C8622A;">Makanan</span>
-                <h6>Mie Nyemek Jogja</h6>
-                <small class="text-secondary">Sari</small>
-                <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
-            </div>
-            </div>
-        </div>
-
-        <div class="col-md-4" data-kategori="makanan">
-            <div class="card border-0 shadow-sm h-100">
-            <img src="https://www.dapurkobe.co.id/wp-content/uploads/soto-lamongan.jpg"
-                class="card-img-top" style="height:220px; object-fit:cover;">
-            <div class="card-body">
-                <span class="badge rounded-pill text-white mb-2" style="background:#C8622A;">Makanan</span>
-                <h6>Soto Ayam Lamongan</h6>
-                <small class="text-secondary">Chef Danu</small>
-                <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
-            </div>
-            </div>
-        </div>
-
-        <div class="col-md-4" data-kategori="makanan">
-            <div class="card border-0 shadow-sm h-100">
-            <img src="https://lingkar.news/wp-content/uploads/2023/03/Resep-coto-makassar-kuah-kental-Makanan-Tradisional-Indonesia.jpg"
-                class="card-img-top" style="height:220px; object-fit:cover;">
-            <div class="card-body">
-                <span class="badge rounded-pill text-white mb-2" style="background:#C8622A;">Makanan</span>
-                <h6>Coto Makassar</h6>
-                <small class="text-secondary">Chef Willi</small>
-                <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
-            </div>
-            </div>
-        </div>
-
-        <div class="col-md-4" data-kategori="minuman">
-            <div class="card border-0 shadow-sm h-100">
-            <img src="https://buckets.sasa.co.id/v1/AUTH_Assets/Assets/p/website/medias/page_medias/es_cendol_nangka.jpg"
-                class="card-img-top" style="height:220px; object-fit:cover;">
-            <div class="card-body">
-                <span class="badge rounded-pill text-white mb-2" style="background:#1a7a8a;">Minuman</span>
-                <h6>Es Cendol Segar</h6>
-                <small class="text-secondary">Bu Shinta</small>
-                <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
-            </div>
-            </div>
-        </div>
-
-        <div class="col-md-4" data-kategori="dessert">
-            <div class="card border-0 shadow-sm h-100">
-            <img src="https://o-cdf.oramiland.com/unsafe/cnc-magazine.oramiland.com/parenting/original_images/terlariss_es_pisang_ijo_asli_makassar.jpg"
-                class="card-img-top" style="height:220px; object-fit:cover;">
-            <div class="card-body">
-                <span class="badge rounded-pill text-white mb-2" style="background:#8a4a9e;">Dessert</span>
-                <h6>Es Pisang Ijo</h6>
-                <small class="text-secondary">Cika</small>
-                <a href="#" class="btn btn-sm text-white float-end" style="background:#C8622A;">Lihat</a>
-            </div>
-            </div>
-        </div>
-
         </div>
 
         <!-- pagination-->
@@ -180,27 +113,14 @@
         </div>
     </footer>
 
+    <script src="../js/api.js"></script>
+    <script src="../js/resep.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-
-    <!-- JS filter kategori -->
-    <script>
-        function filterKategori(kategori, btn) {
-        // Update tombol aktif
-        document.querySelectorAll('[onclick^="filterKategori"]').forEach(b => {
-            b.style.background = 'transparent';
-            b.style.color = b.dataset.warna || '#C8622A';
-            b.classList.remove('text-white');
+    <script src="../js/navbar.js"></script>
+    <script> 
+        document.addEventListener("DOMContentLoaded", function () {
+            getSemuaResep();
         });
-        btn.style.background = '#C8622A';
-        btn.style.color = 'white';
-
-        // Tampil/sembunyikan card
-        document.querySelectorAll('#gridResep [data-kategori]').forEach(col => {
-            col.style.display = (kategori === 'semua' || col.dataset.kategori === kategori) ? '' : 'none';
-        });
-        }
-    </script>
-
+        </script>
 </body>
 </html>

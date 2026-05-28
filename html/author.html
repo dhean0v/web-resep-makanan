@@ -1,147 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Resep Saya</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>
+        Resep Saya - Pawonku
+    </title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet"
+    >
+
 </head>
 
-<body style="background:#FAF3E8;">
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:#7c3a1e;">
+<body
+    style="
+        background:#FAF3E8;
+        font-family:'Lato',sans-serif;
+    "
+>
+
+
+    <!-- ======================
+    NAVBAR
+    ======================= -->
+
+    <nav
+        class="navbar navbar-expand-lg navbar-dark sticky-top"
+        style="background:#7c3a1e;"
+    >
+
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html" style="color:#e8a96a; font-size:1.7rem; font-family:'DM Serif Display',serif;">PawonKu</a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+
+            <!-- LOGO -->
+            <a
+                class="navbar-brand fw-bold"
+                href="index.html"
+                style="
+                    color:#e8a96a;
+                    font-size:1.7rem;
+                    font-family:'DM Serif Display',serif;
+                "
+            >
+                PawonKu
+            </a>
+
+
+            <!-- TOGGLER -->
+            <button
+                class="navbar-toggler border-0"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#nav"
+            >
+
                 <span class="navbar-toggler-icon"></span>
+
             </button>
-            <div class="collapse navbar-collapse" id="nav">
+
+
+            <!-- MENU -->
+            <div
+                class="collapse navbar-collapse"
+                id="nav"
+            >
+
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link text-white-50" href="index.html">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link text-white-50" href="resep.html">Resep</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="author.html">Author</a></li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link text-white-50"
+                            href="index.html"
+                        >
+                            Beranda
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link text-white-50"
+                            href="resep.html"
+                        >
+                            Resep
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a
+                            class="nav-link active text-white"
+                            href="author.html"
+                        >
+                            Author
+                        </a>
+
+                    </li>
+
                 </ul>
-                <div class="d-flex gap-2 mt-3 mt-lg-0">
-                    <input type="search" class="form-control form-control-sm rounded-pill border-0"
-                    placeholder="Cari resep..." style="width:200px;background:rgba(255,255,255,.15);color:white;">
+
+
+                <!-- SEARCH -->
+                <div
+                    class="d-flex align-items-center gap-2 mt-3 mt-lg-0"
+                >
+
+                    <input
+                        type="search"
+                        class="form-control form-control-sm rounded-pill border-0"
+                        placeholder="Cari resep..."
+                        style="
+                            width:200px;
+                            background:rgba(255,255,255,.15);
+                            color:white;
+                        "
+                    >
+
+
+                    <!-- LOGIN / USER -->
+                    <div id="navbarAuth">
+
+                        <!-- AUTO DARI navbar.js -->
+
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </nav>
+
+
+
+    <!-- ======================
+    CONTENT
+    ======================= -->
 
     <div class="container py-5">
 
-        <!-- header -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <!-- HEADER -->
+        <div
+            class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3"
+        >
+
             <div>
-                <h2 style="font-family:'DM Serif Display';">Resep Saya</h2>
-                <p class="text-secondary mb-0">Kelola koleksi resep buatan Anda</p>
+
+                <h2
+                    style="
+                        font-family:'Playfair Display',serif;
+                        color:#5C2E12;
+                    "
+                >
+
+                    Resep Saya
+
+                </h2>
+
+                <p class="text-secondary mb-0">
+
+                    Kelola resep masakan yang sudah Anda upload
+
+                </p>
+
             </div>
-            <a href="buat_resep.html" class="btn rounded-pill text-white" style="background:#C8622A;">
+
+
+            <!-- BUTTON TAMBAH -->
+            <a
+                href="buat_resep.html"
+                class="btn rounded-pill text-white px-4 py-2 shadow-sm"
+                style="
+                    background:#C8622A;
+                    border:none;
+                "
+            >
+
                 + Buat Resep Baru
+
             </a>
+
         </div>
 
-        <div class="row g-4">
-            <!-- card 1 -->
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
-                <img src="https://www.dapurkobe.co.id/wp-content/uploads/rendang-daging.jpg"
-                    style="height:170px; object-fit:cover;">
-                <div class="card-body">
-                    <span class="badge rounded-pill text-white mb-2" style="background:#C8622A;">Makanan</span>
-                    <h6>Rendang Daging Sapi Minang</h6>
-                    <div class="d-flex justify-content-between mt-2">
-                    <a href="detail_resep_saya.html" class="btn btn-sm text-white" style="background:#C8622A;">Lihat</a>
-                    <a href="#" class="text-decoration-none text-danger btn-hapus"
-                        data-judul="Rendang Daging Sapi Minang">🗑 Hapus</a>
-                    </div>
-                </div>
-                </div>
-            </div>
 
-            <!-- card 2 -->
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
-                <img src="https://assets.unileversolutions.com/v1/133180472.png"
-                    style="height:170px; object-fit:cover;">
-                <div class="card-body">
-                    <span class="badge rounded-pill text-white mb-2" style="background:#C8622A;">Makanan</span>
-                    <h6>Sate Ayam Bumbu Kacang</h6>
-                    <div class="d-flex justify-content-between mt-2">
-                    <a href="#" class="btn btn-sm text-white" style="background:#C8622A;">Lihat</a>
-                    <a href="#" class="text-decoration-none text-danger btn-hapus"
-                        data-judul="Sate Ayam Bumbu Kacang">🗑 Hapus</a>
-                    </div>
-                </div>
-                </div>
-            </div>
 
-            <!-- card 3 -->
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
-                <img src="https://cdn-jpr.jawapos.com/images/8/2025/01/27/Gado-Gado-2337756915.jpg"
-                    style="height:170px; object-fit:cover;">
-                <div class="card-body">
-                    <span class="badge rounded-pill text-white mb-2" style="background:#8a4a9e;">Dessert</span>
-                    <h6>Gado-Gado Siram Spesial</h6>
-                    <div class="d-flex justify-content-between mt-2">
-                    <a href="#" class="btn btn-sm text-white" style="background:#C8622A;">Lihat</a>
-                    <a href="#" class="text-decoration-none text-danger btn-hapus"
-                        data-judul="Gado-Gado Siram Spesial">🗑 Hapus</a>
-                    </div>
-                </div>
-                </div>
-            </div>
+        <!-- LIST RESEP -->
+        <div
+            class="row g-4"
+            id="listResepSaya"
+        >
 
-            <!-- card 4 -->
-            <div class="col-md-4">
-                <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
-                <img src="https://lingkar.news/wp-content/uploads/2023/04/Resep-Nasi-Goreng-Kampung-Simple-Buat-Makan-Malam.jpg"
-                    style="height:170px; object-fit:cover;">
-                <div class="card-body">
-                    <span class="badge rounded-pill text-white mb-2" style="background:#C8622A;">Makanan</span>
-                    <h6>Nasi Goreng Kampung Pedas</h6>
-                    <div class="d-flex justify-content-between mt-2">
-                    <a href="#" class="btn btn-sm text-white" style="background:#C8622A;">Lihat</a>
-                    <a href="#" class="text-decoration-none text-danger btn-hapus"
-                        data-judul="Nasi Goreng Kampung Pedas">🗑 Hapus</a>
-                    </div>
-                </div>
-                </div>
-            </div>
+            <!-- AUTO DARI author.js -->
+
         </div>
+
+
+
+        <!-- KOSONG -->
+        <div
+            id="emptyResep"
+            class="text-center py-5 d-none"
+        >
+
+            <img
+                src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png"
+                width="120"
+                class="mb-3 opacity-75"
+            >
+
+            <h4
+                style="
+                    font-family:'Playfair Display',serif;
+                    color:#7c3a1e;
+                "
+            >
+                Belum Ada Resep
+            </h4>
+
+            <p class="text-secondary">
+
+                Ayo coba buat resep pertamamu sekarang 🍳
+
+            </p>
+
+            <a
+                href="buat_resep.html"
+                class="btn rounded-pill text-white px-4"
+                style="background:#C8622A;"
+            >
+
+                + Tambah Resep
+
+            </a>
+
+        </div>
+
+
     </div>
 
-    <!-- footer -->
-    <footer class="mt-5 py-5 text-white" style="background:#3D2B1F;">
+
+
+    <!-- ======================
+    FOOTER
+    ======================= -->
+
+    <footer
+        class="mt-5 py-5 text-white"
+        style="background:#3D2B1F;"
+    >
+
         <div class="container">
-        <div class="row">
-            <div class="col-md-4 mb-3">
-            <h5 class="fw-bold">Pawonku</h5>
-            <p class="text-white-50">Temukan berbagai resep masakan rumahan, tradisional, dan modern dalam satu tempat.</p>
+
+            <div class="row">
+
+
+                <!-- BRAND -->
+                <div class="col-md-4 mb-3">
+
+                    <h5 class="fw-bold">
+
+                        Pawonku
+
+                    </h5>
+
+                    <p class="text-white-50">
+
+                        Temukan berbagai resep masakan rumahan,
+                        tradisional, dan modern dalam satu tempat.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- MENU -->
+                <div class="col-md-4 mb-3">
+
+                    <h6 class="fw-bold">
+
+                        Menu
+
+                    </h6>
+
+                    <ul class="list-unstyled text-white-50">
+
+                        <li>Beranda</li>
+                        <li>Resep</li>
+                        <li>Author</li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- KONTAK -->
+                <div class="col-md-4 mb-3">
+
+                    <h6 class="fw-bold">
+
+                        Kontak
+
+                    </h6>
+
+                    <p class="text-white-50 mb-1">
+
+                        Email: pawonku@email.com
+
+                    </p>
+
+                    <p class="text-white-50">
+
+                        IG: @pawonku
+
+                    </p>
+
+                </div>
+
             </div>
-            <div class="col-md-4 mb-3">
-            <h6 class="fw-bold">Menu</h6>
-            <ul class="list-unstyled text-white-50">
-                <li>Beranda</li><li>Resep</li><li>Author</li>
-            </ul>
+
+
+            <hr class="text-white-50">
+
+
+            <div class="text-center text-white-50">
+
+                © 2026 Pawonku.
+                All rights reserved.
+
             </div>
-            <div class="col-md-4 mb-3">
-            <h6 class="fw-bold">Kontak</h6>
-            <p class="text-white-50 mb-1">Email: pawonku@email.com</p>
-            <p class="text-white-50">IG: @pawonku</p>
-            </div>
+
         </div>
-        <hr class="text-white-50">
-        <div class="text-center text-white-50">© 2026 Pawonku. All rights reserved.</div>
-        </div>
+
     </footer>
 
+
+
+    <!-- ======================
+    SCRIPT
+    ======================= -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+
+    <script src="../js/api.js"></script>
+
+    <script src="../js/navbar.js"></script>
+
+    <script src="../js/author.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+
+            'DOMContentLoaded',
+
+            function () {
+
+                if (
+                    typeof getResepSaya === 'function'
+                ) {
+
+                    getResepSaya();
+
+                }
+
+            }
+
+        );
+
+    </script>
+
 
 </body>
-</html>
+</html> 

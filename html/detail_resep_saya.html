@@ -1,138 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
     <title>Detail Resep Saya</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
 </head>
 
 <body style="background:#FAF3E8;">
 
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background:#7c3a1e;">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html" style="color:#e8a96a; font-size:1.7rem; font-family:'DM Serif Display',serif;">PawonKu</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="nav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link text-white-50" href="index.html">Beranda</a></li>
-            <li class="nav-item"><a class="nav-link text-white-50" href="resep.html">Resep</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="author.html">Author</a></li>
-          </ul>
-          <div class="d-flex gap-2 mt-3 mt-lg-0">
-            <input type="search" class="form-control form-control-sm rounded-pill border-0"
-              placeholder="Cari resep..." style="width:200px;background:rgba(255,255,255,.15);color:white;">
-          </div>
+    <!-- NAVBAR -->
+    <nav
+        class="navbar navbar-expand-lg navbar-dark sticky-top"
+        style="background:#7c3a1e;"
+    >
+
+        <div class="container">
+
+            <a
+                class="navbar-brand fw-bold"
+                href="index.html"
+                style="
+                    color:#e8a96a;
+                    font-size:1.7rem;
+                "
+            >
+                PawonKu
+            </a>
+
         </div>
-      </div>
+
     </nav>
 
+
+    <!-- CONTENT -->
     <div class="container py-5">
 
-      <!-- judul -->
-      <div class="d-flex justify-content-between align-items-start mb-4 flex-wrap gap-2">
-        <div>
-          <span class="badge rounded-pill text-white mb-2" style="background:#C8622A;">Makanan</span>
-          <h2 style="font-family:'Playfair Display';">Rendang Daging Sapi Minang</h2>
-        </div>
-        <a href="edit_resep.html" class="btn rounded-pill px-3"
-          style="background:#FFF0E6; color:#B5521E;">
-          ✎ Edit Resep
-        </a>
-      </div>
+        <!-- HEADER -->
+        <div
+            class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-4"
+        >
 
-      <!-- foto -->
-      <div class="text-center mb-4">
-        <img src="https://www.dapurkobe.co.id/wp-content/uploads/rendang-daging.jpg"
-            class="img-fluid rounded-4 shadow"
-            style="width:100%; max-width:900px; height:350px; object-fit:cover;">
-      </div>
+            <div>
 
-      <!-- bahan -->
-      <div class="card border-0 shadow-sm rounded-4 mb-4 mx-auto overflow-hidden" style="max-width:900px;">
-        <div class="card-body p-4 p-md-5" style="background:#f0e0c4;">
-          <h4 style="font-family:'Playfair Display';" class="mb-3">Bahan-bahan</h4>
-          <ul class="mb-0">
-            <li>500 gr daging sapi</li>
-            <li>800 ml santan</li>
-            <li>5 siung bawang merah</li>
-            <li>3 siung bawang putih</li>
-            <li>5 cabai merah</li>
-            <li>Serai & daun jeruk</li>
-            <li>Garam secukupnya</li>
-          </ul>
-        </div>
-      </div>
+                <span
+                    id="kategoriResep"
+                    class="badge rounded-pill text-white mb-2"
+                    style="background:#C8622A;"
+                ></span>
 
-      <!-- langkah -->
-      <div class="card border-0 shadow-sm rounded-4 mb-4 mx-auto overflow-hidden" style="max-width:900px;">
-        <div class="card-body p-4 p-md-5" style="background:#f0e0c4;">
-          <h4 style="font-family:'Playfair Display';" class="mb-3">Langkah Memasak</h4>
-          <ol class="mb-0">
-            <li>Haluskan dan tumis bumbu</li>
-            <li>Masukkan daging lalu aduk</li>
-            <li>Tuang santan dan masak perlahan</li>
-            <li>Aduk hingga kuah menyusut</li>
-            <li>Sajikan rendang hangat</li>
-          </ol>
-        </div>
-      </div>
+                <h2
+                    id="judulResep"
+                    style="
+                        font-family:'Playfair Display';
+                    "
+                ></h2>
 
-      <!-- ✅ VIDEO YOUTUBE -->
-      <div class="mx-auto mb-4" style="max-width:900px;">
-        <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-          <div class="card-body p-4" style="background:#f0e0c4;">
-            <h4 style="font-family:'Playfair Display';" class="mb-3">▶ Video Tutorial</h4>
-            <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
-              <iframe
-                src="https://www.youtube.com/embed/DMcFqtm1lfY"
-                title="Video Tutorial Rendang"
-                allowfullscreen>
-              </iframe>
+                <p class="text-secondary">
+
+                    Oleh:
+                    <span
+                        id="authorResep"
+                        class="fw-bold"
+                    ></span>
+
+                </p>
+
             </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- TOMBOL KEMBALI -->
-      <div class="text-center mt-4">
-        <a href="author.html" class="btn rounded-pill px-4 text-white" style="background:#B5521E;">
-          ← Kembali ke Resep Saya
-        </a>
-      </div>
+
+            <!-- BUTTON -->
+            <div class="d-flex gap-2">
+
+                <a
+                    id="btnEdit"
+                    href="#"
+                    class="btn rounded-pill px-3"
+                    style="
+                        background:#FFF0E6;
+                        color:#B5521E;
+                    "
+                >
+                    ✎ Edit
+                </a>
+
+                <button
+                    id="btnHapus"
+                    class="btn btn-danger rounded-pill px-3"
+                >
+                    🗑 Hapus
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOTO -->
+        <div class="text-center mb-4">
+
+            <img
+                id="fotoResep"
+                src=""
+                class="img-fluid rounded-4 shadow"
+                style="
+                    width:100%;
+                    max-width:900px;
+                    height:350px;
+                    object-fit:cover;
+                "
+            >
+
+        </div>
+
+
+        <!-- DESKRIPSI -->
+        <div
+            class="card border-0 shadow-sm rounded-4 mb-4"
+        >
+
+            <div
+                class="card-body p-4"
+                style="background:#f0e0c4;"
+            >
+
+                <h4 class="mb-3">
+                    Deskripsi
+                </h4>
+
+                <p
+                    id="deskripsiResep"
+                    class="mb-0"
+                ></p>
+
+            </div>
+
+        </div>
+
+        <!-- VIDEO YOUTUBE -->
+        <div
+            id="youtubeContainer"
+            class="mb-4"
+        ></div>
+
+
+        <!-- BAHAN -->
+        <div
+            class="card border-0 shadow-sm rounded-4 mb-4"
+        >
+
+            <div
+                class="card-body p-4"
+                style="background:#f0e0c4;"
+            >
+
+                <h4 class="mb-3">
+                    Bahan-bahan
+                </h4>
+
+                <ul id="bahanResep"></ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- LANGKAH -->
+        <div
+            class="card border-0 shadow-sm rounded-4 mb-4"
+        >
+
+            <div
+                class="card-body p-4"
+                style="background:#f0e0c4;"
+            >
+
+                <h4 class="mb-3">
+                    Langkah Memasak
+                </h4>
+
+                <ol id="langkahResep"></ol>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUTTON -->
+        <div class="text-center">
+
+            <a
+                href="author.html"
+                class="btn text-white rounded-pill px-4"
+                style="background:#B5521E;"
+            >
+                ← Kembali
+            </a>
+
+        </div>
 
     </div>
 
-    <!-- footer -->
-    <footer class="mt-5 py-5 text-white" style="background:#3D2B1F;">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <h5 class="fw-bold">Pawonku</h5>
-            <p class="text-white-50">Temukan berbagai resep masakan rumahan, tradisional, dan modern dalam satu tempat.</p>
-          </div>
-          <div class="col-md-4 mb-3">
-            <h6 class="fw-bold">Menu</h6>
-            <ul class="list-unstyled text-white-50">
-              <li>Beranda</li><li>Resep</li><li>Author</li>
-            </ul>
-          </div>
-          <div class="col-md-4 mb-3">
-            <h6 class="fw-bold">Kontak</h6>
-            <p class="text-white-50 mb-1">Email: pawonku@email.com</p>
-            <p class="text-white-50">IG: @pawonku</p>
-          </div>
-        </div>
-        <hr class="text-white-50">
-        <div class="text-center text-white-50">© 2026 Pawonku. All rights reserved.</div>
-      </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- SCRIPT -->
+    <script src="../js/api.js"></script>
+
+    <script src="../js/detail_saya.js"></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
+
 </body>
 </html>
