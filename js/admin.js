@@ -118,7 +118,7 @@ async function getSemuaResep() {
 
                         `
                         <button
-                            class="btn btn-success btn-sm"
+                            class="btn btn-success btn-sm me-1"
                             onclick="approveResep(${resep.id})"
                         >
 
@@ -168,9 +168,14 @@ async function getSemuaResep() {
 
         console.log(error);
 
-        alert(
-            'Gagal mengambil data resep'
-        );
+        // Mengganti alert kaku bawaan browser
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal Memuat Data',
+            text: 'Gagal mengambil data resep dari server.',
+            confirmButtonColor: '#C8622A',
+            background: '#FAF3E8'
+        });
 
     }
 
@@ -184,44 +189,61 @@ async function getSemuaResep() {
 
 async function approveResep(id) {
 
-    const yakin =
-    confirm(
-        'Approve resep ini?'
-    );
+    // Mengganti confirm() bawaan browser menjadi SweetAlert2
+    Swal.fire({
+        title: 'Approve resep ini?',
+        text: "Resep akan diterbitkan ke halaman publik.",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#27ae60', // Warna hijau sukses
+        cancelButtonColor: '#6D4B34',  // Warna cokelat PawonKu
+        confirmButtonText: 'Ya, Setujui',
+        cancelButtonText: 'Batal',
+        background: '#FAF3E8'
+    }).then(async (result) => {
+        
+        // Jalankan logika jika admin menekan tombol 'Ya, Setujui'
+        if (result.isConfirmed) {
+            try {
 
-    if (!yakin) return;
+                const response =
+                await fetch(
+                    `${BASE_URL}/admin/approve.php?id=${id}`
+                );
 
-    try {
+                const resultData =
+                await response.json();
 
-        const response =
-        await fetch(
-            `${BASE_URL}/admin/approve.php?id=${id}`
-        );
+                // Mengganti alert() bawaan browser setelah sukses fetch
+                Swal.fire({
+                    icon: resultData.status === 'success' ? 'success' : 'error',
+                    title: resultData.status === 'success' ? 'Berhasil!' : 'Gagal',
+                    text: resultData.message,
+                    showConfirmButton: resultData.status !== 'success',
+                    confirmButtonColor: '#C8622A',
+                    timer: resultData.status === 'success' ? 1500 : undefined,
+                    background: '#FAF3E8'
+                }).then(() => {
+                    if (resultData.status === 'success') {
+                        getSemuaResep();
+                    }
+                });
 
-        const result =
-        await response.json();
+            } catch (error) {
 
-        alert(
-            result.message
-        );
+                console.log(error);
 
-        if (
-            result.status === 'success'
-        ) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error Sistem',
+                    text: 'Gagal approve resep.',
+                    confirmButtonColor: '#C8622A',
+                    background: '#FAF3E8'
+                });
 
-            getSemuaResep();
-
+            }
         }
-
-    } catch (error) {
-
-        console.log(error);
-
-        alert(
-            'Gagal approve resep'
-        );
-
-    }
+    });
 
 }
 
@@ -233,42 +255,61 @@ async function approveResep(id) {
 
 async function hapusResep(id) {
 
-    const yakin =
-    confirm(
-        'Yakin ingin menghapus resep?'
-    );
+    // Mengganti confirm() hapus lama menjadi SweetAlert2
+    Swal.fire({
+        title: 'Yakin ingin menghapus resep?',
+        text: "Data masakan akan terhapus secara permanen dari server.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',     // Warna merah bahaya
+        cancelButtonColor: '#6D4B34',   // Warna cokelat PawonKu
+        confirmButtonText: 'Ya, Hapus',
+        cancelButtonText: 'Batal',
+        background: '#FAF3E8'
+    }).then(async (result) => {
+        
+        // Jalankan logika jika admin menekan tombol 'Ya, Hapus'
+        if (result.isConfirmed) {
+            try {
 
-    if (!yakin) return;
+                const response =
+                await fetch(
+                    `${BASE_URL}/admin/delete.php?id=${id}`
+                );
 
-    try {
+                const resultData =
+                await response.json();
 
-        const response =
-        await fetch(
-            `${BASE_URL}/admin/delete.php?id=${id}`
-        );
+                // Mengganti alert() bawaan browser setelah sukses hapus
+                Swal.fire({
+                    icon: resultData.status === 'success' ? 'success' : 'error',
+                    title: resultData.status === 'success' ? 'Terhapus!' : 'Gagal',
+                    text: resultData.message,
+                    showConfirmButton: resultData.status !== 'success',
+                    confirmButtonColor: '#C8622A',
+                    timer: resultData.status === 'success' ? 1500 : undefined,
+                    background: '#FAF3E8'
+                }).then(() => {
+                    if (resultData.status === 'success') {
+                        getSemuaResep();
+                    }
+                });
 
-        const result =
-        await response.json();
+            } catch (error) {
 
-        alert(result.message);
+                console.log(error);
 
-        if (
-            result.status === 'success'
-        ) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error Sistem',
+                    text: 'Gagal menghapus resep.',
+                    confirmButtonColor: '#C8622A',
+                    background: '#FAF3E8'
+                });
 
-            getSemuaResep();
-
+            }
         }
-
-    } catch (error) {
-
-        console.log(error);
-
-        alert(
-            'Gagal menghapus resep'
-        );
-
-    }
+    });
 
 }
 

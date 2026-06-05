@@ -127,39 +127,61 @@ async function checkLogin() {
 }
 
 
-// ======================
-// LOGOUT
-// ======================
+// =========================================================
+// 🌟 LOGOUT (HANYA MENGUBAH VALIDASI MENJADI SWEETALERT2)
+// =========================================================
 
 async function logout() {
 
-    const yakin =
-    confirm(
-        'Yakin ingin logout?'
-    );
+    // Menampilkan jendela konfirmasi melayang menggantikan confirm() bawaan
+    Swal.fire({
+        title: 'Yakin ingin logout?',
+        text: "Sesi Anda akan diakhiri dan harus login kembali untuk mengakses fitur.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#C8622A', // Warna oranye utama PawonKu
+        cancelButtonColor: '#6D4B34',  // Warna cokelat aksen PawonKu
+        confirmButtonText: 'Ya, Keluar',
+        cancelButtonText: 'Batal',
+        background: '#FAF3E8'          // Menyesuaikan warna krem background web
+    }).then(async (result) => {
+        
+        // Jalankan fetch jika user menekan tombol 'Ya, Keluar'
+        if (result.isConfirmed) {
+            try {
 
-    if (!yakin) return;
+                const response =
+                await fetch(
+                    `${BASE_URL}/auth/logout.php`
+                );
 
-    try {
+                const resultData =
+                await response.json();
 
-        const response =
-        await fetch(
-            `${BASE_URL}/auth/logout.php`
-        );
+                // Notifikasi pop-up sukses keluar sebentar sebelum redirect halaman
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil Keluar',
+                    text: 'Sampai jumpa kembali di PawonKu!',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    background: '#FAF3E8'
+                }).then(() => {
+                    window.location.href = 'index.html';
+                });
 
-        const result =
-        await response.json();
+            } catch (error) {
 
-        window.location.href =
-        'index.html';
+                console.log(error);
+                window.location.href = 'index.html';
 
-    } catch (error) {
-
-        console.log(error);
-
-    }
+            }
+        }
+        
+    });
 
 }
+
 // ======================
 // LOAD
 // ======================
