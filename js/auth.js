@@ -38,7 +38,6 @@ async function loginUser() {
         // LOGIN BERHASIL
         if (result.status === 'success') {
 
-            alert('Login berhasil');
 
             window.location.href =
             'index.html';

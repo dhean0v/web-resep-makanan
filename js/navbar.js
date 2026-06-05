@@ -150,10 +150,6 @@ async function logout() {
         const result =
         await response.json();
 
-        alert(
-            result.message
-        );
-
         window.location.href =
         'index.html';
 
@@ -164,8 +160,6 @@ async function logout() {
     }
 
 }
-
-
 // ======================
 // LOAD
 // ======================

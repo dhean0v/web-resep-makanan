@@ -132,6 +132,38 @@ function filterKategori(kategori) {
     });
 }
 
+function filterSearch() {
+
+    const input =
+    document.querySelector(
+        'input[type="search"]'
+    );
+
+    const keyword =
+    input.value.toLowerCase();
+
+    const cards =
+    document.querySelectorAll(
+        '#gridResep [data-kategori]'
+    );
+
+    cards.forEach(card => {
+
+        const nama =
+        card.querySelector('h5')
+        .textContent
+        .toLowerCase();
+
+        card.style.display =
+        nama.includes(keyword)
+            ? 'block'
+            : 'none';
+
+    });
+
+}
+
+
 
 document.addEventListener(
 

@@ -11,9 +11,6 @@ async function getDetailResep() {
 
     // CEK ID
     if (!id) {
-
-        alert('ID resep tidak ditemukan');
-
         return;
 
     }

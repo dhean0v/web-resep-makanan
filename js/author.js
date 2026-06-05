@@ -18,8 +18,7 @@ async function getResepSaya() {
 
         // Belum login → ke halaman login
         if (result.status === 'error') {
-            alert('Silakan login');
-            window.location.href = '../html/    login.html';
+            window.location.href = '../html/login.html';
             return;
         }
 
@@ -37,7 +36,7 @@ async function getResepSaya() {
             // Warna badge status
             let warnaStatus = '#f39c12';
             let labelStatus = '⏳ Menunggu';
-            if (resep.status === 'approved') {
+            if (resep.status === 'published') {
                 warnaStatus = '#27ae60';
                 labelStatus = '✓ Disetujui';
             }

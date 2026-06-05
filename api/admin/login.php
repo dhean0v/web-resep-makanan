@@ -42,10 +42,6 @@ if ($admin) {
     echo json_encode([
 
         "status" => "success",
-
-        "message" =>
-        "Login admin berhasil"
-
     ]);
 
 } else {

@@ -85,7 +85,7 @@ async function getSemuaResep() {
                 <!-- USER -->
                 <td>
 
-                    ${resep.nama_user}
+                    ${resep.kategori}
 
                 </td>
 
@@ -140,6 +140,18 @@ async function getSemuaResep() {
                         Hapus
 
                     </button>
+
+                    <div class="mt-3">
+
+                        <a
+                            href="detail_admin.html?id=${resep.id}"
+                            class="btn btn-sm text-white"
+                            style="background:#C8622A;"
+                        >
+                            Lihat Detail
+                        </a>
+
+                    </div>  
 
                 </td>
 
