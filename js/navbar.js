@@ -109,7 +109,7 @@ async function checkLogin() {
                         style="background:#C8622A;"
                     >
 
-                        Login User
+                        Login
 
                     </a>
 

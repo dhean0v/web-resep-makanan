@@ -1,1 +1,1 @@
-const BASE_URL ='../api';
+const BASE_URL = 'http://localhost/web-resep-makanan/api';
